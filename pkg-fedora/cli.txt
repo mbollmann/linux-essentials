@@ -1,0 +1,15 @@
+ack
+bat
+bench
+exa
+fd-find
+fzf
+httpie
+keychain
+ncdu
+ripgrep
+thefuck
+tldr
+visidata
+wget
+wmctrl

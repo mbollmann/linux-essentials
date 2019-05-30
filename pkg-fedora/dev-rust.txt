@@ -1,0 +1,4 @@
+rust
+rust-gdb
+rust-std-static
+cargo

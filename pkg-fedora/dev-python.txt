@@ -1,0 +1,11 @@
+python3
+python3-pip
+python3-devel
+python3-black
+python3-numpy
+python3-scipy
+python3-pytest
+python3-pytest-cov
+python3-pytest-virtualenv
+python3-virtualenv
+xonsh

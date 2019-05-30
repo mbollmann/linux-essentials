@@ -1,0 +1,5 @@
+emacs
+emacs-auctex
+fish
+git
+tmux

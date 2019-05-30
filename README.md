@@ -4,7 +4,6 @@ Dot-files, essential packages, and more to set up a Linux installation, kept
 here to facilitate setting up a new system or virtual machine.
 
 
-
 ## Dot-files
 
 The following files **contain personalized settings** and should probably
@@ -47,3 +46,17 @@ loaded.
 
 **TODO:** I used to have a tmux configuration here, but it's currently
 broken. Need to investigate.
+
+
+## Packages
+
+`pkg-fedora/` contains various files that list packages I like to have on my
+systems.  Since I'm using Fedora-based distributions, the names correspond to
+package names in the Fedora package repositories.
+
+`install-pkg-fedora.sh` is a convenience script to quickly install all packages
+from a given file; e.g., to install all the nifty command-line utilities:
+
+```bash
+sudo ./install-pkg-fedora.sh pkg-fedora/cli.txt
+```

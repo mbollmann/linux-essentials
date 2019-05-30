@@ -1,0 +1,4 @@
+gcc
+glib2-devel
+boost
+boost-devel

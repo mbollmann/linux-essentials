@@ -1,0 +1,11 @@
+httpd
+mariadb
+mariadb-server
+php
+php-mysqlnd
+php-pdo
+php-pear
+php-cli
+php-xml
+php-phpunit-PHPUnit
+php-phpunit-DbUnit
