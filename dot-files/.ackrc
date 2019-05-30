@@ -1,0 +1,14 @@
+# Always sort files
+--sort-files
+
+# Define colors
+--color
+--color-filename=magenta
+--color-lineno=yellow
+--color-match=bright_green
+
+# Use pager
+--pager=less -R -F
+
+# Ignores
+--ignore-directory=is:build

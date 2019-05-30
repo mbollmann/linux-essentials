@@ -1,0 +1,5 @@
+[user]
+	email = marcel@bollmann.me
+	name = Marcel Bollmann
+[push]
+	default = matching
