@@ -36,7 +36,6 @@
     anzu
     apache-mode
     cmake-mode
-    csv-mode
     fish-mode
     gitconfig-mode
     gitignore-mode
@@ -48,7 +47,6 @@
     php-mode
     python-mode
     python-docstring
-    rainbow-mode
     rust-mode
     sass-mode
     scss-mode
