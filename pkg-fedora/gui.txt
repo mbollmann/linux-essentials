@@ -1,4 +1,3 @@
 thunderbird
 thunderbird-enigmail
 yakuake
-dropbox

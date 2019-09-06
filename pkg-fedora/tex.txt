@@ -7,13 +7,13 @@ texlive-collection-fontsrecommended
 texlive-collection-humanities
 texlive-collection-genericrecommended
 texlive-collection-langcjk
-texlive-collection-cyrillic
+texlive-collection-langcyrillic
 texlive-collection-langgerman
 texlive-collection-latex
 texlive-collection-latexrecommended
 texlive-collection-pictures
 texlive-collection-science
 texlive-collection-xetex
-texlive-collection-biblatex
+texlive-biblatex
 texlive-collection-luatex
 biber
