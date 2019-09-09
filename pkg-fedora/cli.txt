@@ -4,6 +4,7 @@ bench
 exa
 fd-find
 fzf
+htop
 httpie
 keychain
 ncdu
