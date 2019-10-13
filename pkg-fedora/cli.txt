@@ -6,8 +6,11 @@ fd-find
 fzf
 htop
 httpie
+ImageMagick
 keychain
 ncdu
+pdf2svg
+pdf-stapler
 ripgrep
 thefuck
 tldr

@@ -16,4 +16,5 @@ texlive-collection-science
 texlive-collection-xetex
 texlive-biblatex
 texlive-collection-luatex
+texlive-standalone
 biber

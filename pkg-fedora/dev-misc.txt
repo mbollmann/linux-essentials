@@ -1,0 +1,4 @@
+ruby-devel
+python2-devel
+perl-XML-Writer-String
+perl-CPAN

@@ -1,3 +1,6 @@
+libreoffice-writer
+libreoffice-math
+libreoffice-impress
 thunderbird
 thunderbird-enigmail
 yakuake
