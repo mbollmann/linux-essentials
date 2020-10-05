@@ -29,9 +29,9 @@
 (setq initial-scratch-message nil)
 
 ;; set default font and font size. Only ONE of the following should be enabled!
-;(set-face-attribute 'default nil :family "Hack" :height 110)
+(set-face-attribute 'default nil :family "Hack" :height 110)
 ;(require 'fira-code)
-(set-default-font "Hack-11")
+;(set-default-font "Hack-11")
 
 ;; default line spacing, original value was nil
 (setq-default line-spacing 1)
