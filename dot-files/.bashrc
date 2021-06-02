@@ -129,6 +129,18 @@ if [ -d $HOME/scripts ]; then
     export PATH=$HOME/scripts:$PATH
 fi
 
+if [ -d $HOME/.local/bin ]; then
+    export PATH=$HOME/.local/bin:$PATH
+fi
+
+if [ -d $HOME/.cargo/bin ]; then
+    export PATH=$HOME/.cargo/bin:$PATH
+fi
+
+if [ -d /var/lib/snapd/snap/bin ]; then
+    export PATH=/var/lib/snapd/snap/bin:$PATH
+fi
+
 # use Emacs whenever possible
 export ALTERNATE_EDITOR="emacs"
 export EDITOR="emacs -nw"

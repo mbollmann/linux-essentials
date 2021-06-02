@@ -1,5 +1,3 @@
 bibutils
 cmake
 docker
-jing
-trang

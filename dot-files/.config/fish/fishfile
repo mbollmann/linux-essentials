@@ -1,10 +1,5 @@
 edc/bass
 jorgebucaran/fish-getopts
-fishpkg/fish-git-util
-fishpkg/fish-host-info
-fishpkg/fish-humanize-duration
-fishpkg/fish-last-job-id
-fishpkg/fish-pwd-info
-fishpkg/fish-pwd-is-home
 jethrokuan/z
 jethrokuan/fzf
+mbollmann/fishpkgs

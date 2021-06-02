@@ -21,6 +21,10 @@ if status --is-interactive
     set -x PATH $PATH $HOME/.local/bin
   end
 
+  if test -d /var/lib/snapd/snap/bin
+    set -x PATH $PATH /var/lib/snapd/snap/bin
+  end
+
   set -x EDITOR "emacs -nw"
   set -x VISUAL "emacs"
   set -x ALTERNATE_EDITOR "emacs"

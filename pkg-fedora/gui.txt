@@ -1,6 +1,6 @@
 libreoffice-writer
 libreoffice-math
 libreoffice-impress
+terminator
 thunderbird
-thunderbird-enigmail
 yakuake
