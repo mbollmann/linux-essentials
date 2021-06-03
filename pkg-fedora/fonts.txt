@@ -1,4 +1,5 @@
 adobe-source-code-pro-fonts
+fira-code-fonts
 fontawesome-fonts
 fontawesome-fonts-web
 levien-inconsolata-fonts
@@ -9,6 +10,8 @@ google-droid-sans-fonts
 google-droid-serif-fonts
 google-droid-sans-mono-fonts
 lato-fonts
+mozilla-fira-sans-fonts
+mozilla-fira-mono-fonts
 texlive-droid
 texlive-fira
 texlive-lato
