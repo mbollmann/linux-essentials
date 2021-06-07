@@ -21,6 +21,10 @@ if status --is-interactive
     set -x PATH $PATH $HOME/.local/bin
   end
 
+  if test -d $HOME/.npm-global/bin
+    set -x PATH $PATH $HOME/.npm-global/bin
+  end
+
   if test -d /var/lib/snapd/snap/bin
     set -x PATH $PATH /var/lib/snapd/snap/bin
   end
