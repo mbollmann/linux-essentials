@@ -17,3 +17,4 @@ tldr
 visidata
 wget
 wmctrl
+xclip

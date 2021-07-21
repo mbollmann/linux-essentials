@@ -1,4 +1,6 @@
 rust
+rustfmt
 rust-gdb
 rust-std-static
 cargo
+clippy

@@ -1,6 +1,8 @@
+deja-dup
 libreoffice-writer
 libreoffice-math
 libreoffice-impress
 terminator
 thunderbird
+vlc
 yakuake

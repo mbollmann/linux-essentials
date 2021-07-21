@@ -30,3 +30,10 @@ if which npm >/dev/null; then
 else
     echo "!!! npm isn't installed; skipping installation of npm packages."
 fi
+
+if which python >/dev/null; then
+    python -m pip install --upgrade pip
+    python -m pip install virtualfish
+else
+    echo "!!! python isn't installed; skipping installation of Python packages."
+fi
