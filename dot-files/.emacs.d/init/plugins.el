@@ -98,18 +98,22 @@
 
 ;; magit and extensions
 (use-package magit
-  :no-require t
   :bind (("C-x g s" . magit-status)
          ("<f4>" . magit-status)
          ("C-<f4>" . magit-status))
   :config
   (progn (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
 )
-(use-package magit-gitflow :defer t
+(use-package magit-gitflow
   :hook (magit-mode . turn-on-magit-gitflow)
   )
-(use-package magit-todos :defer t
-  :hook (magit-mode . magit-todos-mode)
+(use-package magit-todos
+  :init
+  (add-hook 'magit-mode
+            (let ((inhibit-message t)) (magit-todos-mode 1)))
+  :config
+  (transient-append-suffix 'magit-status-jump '(0 0 -1)
+    '("T " "Todos" magit-todos-jump-to-todos))
   )
 
 ;; dired+
