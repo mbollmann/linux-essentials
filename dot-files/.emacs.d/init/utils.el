@@ -95,7 +95,7 @@ region\) apply comment-or-uncomment to the current line"
       ad-do-it
     (let ((formatted-string (apply 'format (ad-get-args 0))))
       (if (and (stringp formatted-string)
-               (some (lambda (re) (string-match re formatted-string)) message-filter-regexp-list))
+               (cl-some (lambda (re) (string-match re formatted-string)) message-filter-regexp-list))
           (with-current-buffer "*Messages*"
             (goto-char (point-max))
             (insert formatted-string "\n"))

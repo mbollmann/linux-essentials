@@ -1,4 +1,4 @@
-(require 'cl)
+(require 'cl-lib)
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -72,9 +72,9 @@
   "A list of packages to ensure are installed at launch.")
 
 (defun mmb-packages-installed-p ()
-  (loop for p in mmb-packages
-        when (not (package-installed-p p)) do (return nil)
-        finally (return t)))
+  (cl-loop for p in mmb-packages
+           when (not (package-installed-p p)) do (return nil)
+           finally (return t)))
 
 (unless (mmb-packages-installed-p)
   (message "%s" "Refreshing package database...")
