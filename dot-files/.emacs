@@ -44,8 +44,16 @@
 ;; Load other configuration files
 (add-to-list 'load-path "~/.emacs.d/major-modes")
 (add-to-list 'load-path "~/.emacs.d/plugins")
+
+;; Make startup faster by reducing the frequency of garbage
+;; collection.  The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
+
 (require 'interface)
 (require 'major-modes)
 (require 'utils)
 (require 'plugins)
 (require 'key-bindings)
+
+;; Make gc pauses faster by decreasing the threshold.
+(setq gc-cons-threshold (* 2 1000 1000))

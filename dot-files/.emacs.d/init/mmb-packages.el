@@ -16,6 +16,7 @@
     browse-kill-ring
     dash
     epl
+    esup
     fuzzy
     highlight-symbol
     ido-completing-read+
@@ -31,6 +32,7 @@
     solarized-theme
     spaceline
     tabbar
+    use-package
     with-editor
 
     anzu
@@ -61,8 +63,8 @@
     google-translate
     magit
     magit-gitflow
-    magit-org-todos
     magit-popup
+    magit-todos
     git-commit
     neotree
     org
@@ -73,8 +75,8 @@
 
 (defun mmb-packages-installed-p ()
   (cl-loop for p in mmb-packages
-           when (not (package-installed-p p)) do (return nil)
-           finally (return t)))
+           when (not (package-installed-p p)) do (cl-return nil)
+           finally (cl-return t)))
 
 (unless (mmb-packages-installed-p)
   (message "%s" "Refreshing package database...")

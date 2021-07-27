@@ -82,12 +82,6 @@
 ;(global-set-key (kbd "<f7>") 'flycheck-list-errors)
 ;(global-set-key (kbd "S-<f7>") 'flycheck-mode)
 
-;;;; magit
-(global-set-key (kbd "C-x g s") 'magit-status)
-(global-set-key (kbd "<f4>") 'magit-status)
-(eval-after-load "magit"
-  '(progn (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)))
-
 ;;;; org-mode
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)

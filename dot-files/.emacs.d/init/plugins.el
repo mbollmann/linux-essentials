@@ -1,4 +1,7 @@
 ;; External plug-ins
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
 
 ;;;; clean and powerful modeline
 ;(require 'smart-mode-line)
@@ -93,19 +96,36 @@
   (god-mode)
   )
 
-;; magit-gitflow extension
-(require 'magit-gitflow)
-(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
-(require 'magit-org-todos)
-(magit-org-todos-autoinsert)
+;; magit and extensions
+(use-package magit
+  :no-require t
+  :bind (("C-x g s" . magit-status)
+         ("<f4>" . magit-status)
+         ("C-<f4>" . magit-status))
+  :config
+  (progn (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
+)
+(use-package magit-gitflow :defer t
+  :hook (magit-mode . turn-on-magit-gitflow)
+  )
+(use-package magit-todos :defer t
+  :hook (magit-mode . magit-todos-mode)
+  )
 
 ;; dired+
-(require 'dired+)
-(require 'neotree)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(use-package dired+ :defer t)
+(use-package neotree :defer t
+  :commands neotree-toggle
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-smart-open t)
+  :bind ("<f5>" . neotree-toggle)
+  )
 
 ;; icon goodness
-(require 'font-lock+)
-(require 'all-the-icons)
+(use-package font-lock+)
+(use-package all-the-icons)
+
+(setq esup-depth 0)
 
 (provide 'plugins)
