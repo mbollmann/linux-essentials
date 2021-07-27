@@ -12,3 +12,5 @@
 
 # Ignores
 --ignore-directory=is:build
+--ignore-directory=is:.git
+--ignore-directory=is:venv
