@@ -257,4 +257,6 @@ if [ -x /usr/local/bin/pew ]; then
     source $(pew shell_config)
 fi
 
+which starship >/dev/null 2>&1 && eval "$(starship init bash)"
+
 [[ -r ~/.bashrc_local ]] && . ~/.bashrc_local

@@ -1,12 +1,12 @@
+set -g VIRTUALFISH_HOME ~/.virtualenv
 if status --is-interactive
   # Enable virtualfish
   #if python3 -m virtualfish >/dev/null ^/dev/null
-    #eval (python3 -m virtualfish)
-    #set -g VIRTUALFISH_HOME ~/.virtualenv
+  #  eval (python3 -m virtualfish)
   #end
 
   if command -s keychain >/dev/null
-    keychain --quiet --clear --ignore-missing $HOME/.ssh/id_rsa $HOME/.ssh/id_dsa
+    keychain --quiet --clear --ignore-missing $HOME/.ssh/id_rsa $HOME/.ssh/id_dsa $HOME/.ssh/id_ed25519
   end
 
   if test -d $HOME/scripts
@@ -32,4 +32,14 @@ if status --is-interactive
   set -x EDITOR "emacs -nw"
   set -x VISUAL "emacs"
   set -x ALTERNATE_EDITOR "emacs"
+
+  # We define our own virtualenv prompt, this hopefully disables warnings from vf?
+  set -g VIRTUAL_ENV_DISABLE_PROMPT 1
+
+end
+
+source /home/bollmann/.config/fish/functions/conda.fish
+
+if command -s starship >/dev/null
+  starship init fish | source
 end

@@ -1,0 +1,86 @@
+# Add newline after each prompt?
+add_newline = false
+
+# Left prompt
+format = """\
+$username$hostname$directory\
+$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch\
+$fill\
+$cmd_duration$all$shell$character"""
+
+# Right prompt
+right_format = """$time"""
+
+[character]
+success_symbol = "[](bold blue)"
+error_symbol = "[](bold red)"
+# alt: 
+# " "
+# ""
+# "↯"
+
+[cmd_duration]
+style="bold dimmed purple"
+#show_notifications = true
+
+[directory]
+format = "[ ](bright-black)[$path]($style)[$read_only]($read_only_style) "
+style = "bold blue"
+truncation_symbol = "…/"
+home_symbol = "~"
+truncation_length = 5
+truncate_to_repo = true
+#fish_style_pwd_dir_length = 0
+read_only = " "
+
+[fill]
+symbol=" "
+
+[git_branch]
+style="bold dimmed purple"
+
+[git_status]
+style="bold dimmed purple"
+format='([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style) )'
+conflicted="[](bold red)"
+modified="%"
+
+[hostname]
+ssh_only=true
+format="on [$hostname]($style) "
+
+[nodejs]
+detect_folders=[]
+
+[python]
+symbol=" "
+
+[shell]
+disabled=false
+bash_indicator=" bash "       # default shell
+fish_indicator=""
+xonsh_indicator=" "
+zsh_indicator=" zsh "
+elvish_indicator=" esh "
+ion_indicator=" ion "
+powershell_indicator=" psh "
+tcsh_indicator=" tsh "
+unknown_indicator="  "
+format="[$indicator](dimmed yellow)"
+
+[status]
+disabled=false
+map_symbol=true
+pipestatus=true
+
+[time]
+disabled=false
+format='[\[$time\]]($style) '
+style="bright-black"
+
+[username]
+show_always=false
+format="[$user]($style) "
+style_root="bold white bg:red"
+
+# Custom Slurm module?
