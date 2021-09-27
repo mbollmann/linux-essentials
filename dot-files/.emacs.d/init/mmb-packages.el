@@ -36,6 +36,7 @@
     with-editor
 
     anzu
+    ess
     apache-mode
     cmake-mode
     fish-mode

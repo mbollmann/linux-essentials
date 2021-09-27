@@ -3,3 +3,5 @@
 	name = Marcel Bollmann
 [push]
 	default = matching
+[init]
+	defaultBranch = main

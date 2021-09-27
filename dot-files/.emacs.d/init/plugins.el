@@ -105,6 +105,7 @@
   (progn (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
 )
 (use-package magit-gitflow
+  :defer t
   :hook (magit-mode . turn-on-magit-gitflow)
   )
 (use-package magit-todos

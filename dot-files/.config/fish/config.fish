@@ -38,7 +38,9 @@ if status --is-interactive
 
 end
 
-source /home/bollmann/.config/fish/functions/conda.fish
+if test -f /home/bollmann/.config/fish/functions/conda.fish
+  source /home/bollmann/.config/fish/functions/conda.fish
+end
 
 if command -s starship >/dev/null
   starship init fish | source
