@@ -3,10 +3,11 @@ add_newline = false
 
 # Left prompt
 format = """\
-$username$hostname$directory\
+$username$hostname\
 $git_branch$git_commit$git_state$git_metrics$git_status$hg_branch\
 $fill\
-$cmd_duration$all$shell$character"""
+$cmd_duration$all\
+$shell$directory$character"""
 
 # Right prompt
 right_format = """$time"""
@@ -24,13 +25,14 @@ style="bold dimmed purple"
 #show_notifications = true
 
 [directory]
-format = "[ ](bright-black)[$path]($style)[$read_only]($read_only_style) "
+#[ ]
+format = "(bright-black)[$path]($style)[$read_only]($read_only_style) "
 style = "bold blue"
 truncation_symbol = "…/"
 home_symbol = "~"
-truncation_length = 5
+truncation_length = 3
 truncate_to_repo = true
-#fish_style_pwd_dir_length = 0
+fish_style_pwd_dir_length = 1
 read_only = " "
 
 [fill]
@@ -38,6 +40,11 @@ symbol=" "
 
 [git_branch]
 style="bold dimmed purple"
+format="on [$symbol$branch]($style) "
+symbol=" "
+
+[git_commit]
+format="[\\( $hash$tag\\)]($style) "
 
 [git_status]
 style="bold dimmed purple"
