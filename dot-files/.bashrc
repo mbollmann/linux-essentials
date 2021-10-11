@@ -259,4 +259,8 @@ fi
 
 which starship >/dev/null 2>&1 && eval "$(starship init bash)"
 
+if [ -f ~/.config/pythonstartup.py ]; then
+    export PYTHONSTARTUP=~/.config/pythonstartup.py
+fi
+
 [[ -r ~/.bashrc_local ]] && . ~/.bashrc_local

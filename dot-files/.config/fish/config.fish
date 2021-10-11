@@ -1,4 +1,11 @@
-set -g VIRTUALFISH_HOME ~/.virtualenv
+if test -d ~/.virtualenv
+  set -g VIRTUALFISH_HOME ~/.virtualenv
+end
+
+if test -d ~/.virtualenvs
+  set -g VIRTUALFISH_HOME ~/.virtualenvs
+end
+
 if status --is-interactive
   # Enable virtualfish
   #if python3 -m virtualfish >/dev/null ^/dev/null
@@ -27,6 +34,10 @@ if status --is-interactive
 
   if test -d /var/lib/snapd/snap/bin
     set -x PATH $PATH /var/lib/snapd/snap/bin
+  end
+
+  if test -f ~/.config/pythonstartup.py
+    set -x PYTHONSTARTUP ~/.config/pythonstartup.py
   end
 
   set -x EDITOR "emacs -nw"
