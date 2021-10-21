@@ -1,5 +1,5 @@
 import sys
-sys.ps1 = " > "
+sys.ps1 = " > "
 
 def fallback_pprint_hook(pprint, value):
     if value != None:
@@ -11,6 +11,7 @@ try:
     from rich import print as pprint
     pretty.install()
     _ = traceback.install()
+    del _
 except ImportError:
     try:
         from pprint import pprint
