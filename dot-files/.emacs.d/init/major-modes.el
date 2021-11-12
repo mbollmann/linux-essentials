@@ -70,6 +70,9 @@
   css-mode emacs-lisp-mode less-css-mode
   )
 
+;; LaTeX/AucTeX
+(require 'fast-latex-input)
+
 ;; Apache mode
 (autoload 'apache-mode "apache-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))

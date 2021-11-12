@@ -3,6 +3,7 @@ texlive-apa
 texlive-apacite
 texlive-collection-basic
 texlive-collection-bibtexextra
+texlive-collection-fontsextra
 texlive-collection-fontsrecommended
 texlive-collection-humanities
 texlive-collection-genericrecommended
@@ -10,8 +11,10 @@ texlive-collection-langcjk
 texlive-collection-langcyrillic
 texlive-collection-langgerman
 texlive-collection-latex
+texlive-collection-latexextra
 texlive-collection-latexrecommended
 texlive-collection-pictures
+texlive-collection-plaingeneric
 texlive-collection-science
 texlive-collection-xetex
 texlive-biblatex

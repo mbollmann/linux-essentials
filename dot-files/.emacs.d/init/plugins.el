@@ -52,6 +52,7 @@
 (global-auto-complete-mode t)
 
 ;;;; eyebrowse
+(setq eyebrowse-keymap-prefix (kbd "C-ä C-e"))
 (require 'eyebrowse)
 (eyebrowse-mode t)
 

@@ -55,6 +55,9 @@
     scss-mode
     yaml-mode
 
+    cdlatex
+    yasnippet
+
     all-the-icons
     discover-my-major
     eyebrowse

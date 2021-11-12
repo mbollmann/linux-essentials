@@ -21,7 +21,7 @@
 
 ;; formatting stuff
 (global-set-key (kbd "C-c C-r") 'comment-or-uncomment-region-or-line)
-(global-set-key (kbd "C-c C-w") 'delete-trailing-whitespace)
+(global-set-key (kbd "C-ä C-w") 'delete-trailing-whitespace)
 
 ;; move-text
 (require 'move-text)
