@@ -5,8 +5,6 @@
 ;; install it if it's not available, so please edit the following code as
 ;; appropriate before running it.
 
-;; Note that this file does not define any auto-expanding YaSnippets.
-
 ;; Install use-package
 ;;(package-install 'use-package)
 
@@ -50,7 +48,10 @@
   :ensure t
   :hook (LaTeX-mode . turn-on-cdlatex)
   :bind (:map cdlatex-mode-map
-              ("<tab>" . cdlatex-tab)))
+              ("<tab>" . cdlatex-tab))
+  :init
+  (setq cdlatex-math-modify-prefix (kbd "’"))
+)
 
 ;; Yasnippet settings
 (use-package yasnippet
@@ -192,5 +193,18 @@
     (if (bound-and-true-p cdlatex-mode)
         (cdlatex-tab)
       (org-table-next-field))))
+
+;;;; auto-activating-snippets
+(use-package texmathp)
+(use-package aas
+  :after (:all texmathp yasnippet)
+  :hook (LaTeX-mode . aas-activate-for-major-mode)
+  :config
+  (aas-set-snippets 'latex-mode
+                    :cond #'texmathp
+                    "//" (lambda () (interactive)
+                           (yas-expand-snippet "\\frac{$1}{$2}$0"))
+                    )
+  )
 
 (provide 'fast-latex-input)

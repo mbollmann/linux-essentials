@@ -35,6 +35,7 @@
     use-package
     with-editor
 
+    aas
     anzu
     ess
     apache-mode
