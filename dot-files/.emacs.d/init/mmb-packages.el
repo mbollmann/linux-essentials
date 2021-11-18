@@ -49,6 +49,7 @@
     markdown-mode
     multi-web-mode
     php-mode
+    poly-markdown
     python-mode
     python-docstring
     rust-mode

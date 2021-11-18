@@ -29,6 +29,11 @@
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.page$" . markdown-mode))
 
+;; R-markdown-mode
+(use-package poly-markdown
+  :ensure t
+  )
+
 ;; yaml-mode
 (use-package yaml-mode
   :mode "\\.ya?ml\\'"
