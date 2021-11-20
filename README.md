@@ -3,7 +3,7 @@
 Dot-files, essential packages, and more to set up a Linux installation, kept
 here to facilitate setting up a new system or virtual machine.
 
-This configuration has most recently been tested on: **Fedora 30**
+This configuration has most recently been tested on: **Fedora 34**
 
 
 ## Dot-files
