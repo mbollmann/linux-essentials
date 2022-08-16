@@ -20,6 +20,10 @@ if status --is-interactive
     set -x PATH $PATH $HOME/scripts
   end
 
+  if test -d $HOME/repos/scripts
+    set -x PATH $PATH $HOME/repos/scripts
+  end
+
   if test -d $HOME/.cargo/bin
     set -x PATH $PATH $HOME/.cargo/bin
   end
@@ -48,6 +52,8 @@ if status --is-interactive
   set -g VIRTUAL_ENV_DISABLE_PROMPT 1
 
 end
+
+set -x R_LIBS_USER "$HOME/.R/library"
 
 if test -f /home/bollmann/.config/fish/functions/conda.fish
   source /home/bollmann/.config/fish/functions/conda.fish

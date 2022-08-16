@@ -129,6 +129,10 @@ if [ -d $HOME/scripts ]; then
     export PATH=$HOME/scripts:$PATH
 fi
 
+if [ -d $HOME/repos/scripts ]; then
+    export PATH=$HOME/repos/scripts:$PATH
+fi
+
 if [ -d $HOME/.local/bin ]; then
     export PATH=$HOME/.local/bin:$PATH
 fi
