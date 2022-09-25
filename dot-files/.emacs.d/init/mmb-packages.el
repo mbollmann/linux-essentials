@@ -41,8 +41,6 @@
     apache-mode
     cmake-mode
     fish-mode
-    gitconfig-mode
-    gitignore-mode
     god-mode
     haml-mode
     js2-mode

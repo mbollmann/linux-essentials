@@ -1,4 +1,5 @@
-deja-dup
+asunder
+clementine
 libreoffice-writer
 libreoffice-math
 libreoffice-impress
