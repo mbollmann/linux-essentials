@@ -1,5 +1,5 @@
 import sys
-sys.ps1 = " > "
+sys.ps1 = ">>> "
 sys.ps2 = "   "
 
 def fallback_pprint_hook(pprint, value):
