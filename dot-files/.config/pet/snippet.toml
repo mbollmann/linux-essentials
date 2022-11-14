@@ -1,0 +1,85 @@
+[[snippets]]
+  description = "Get a weather report for a city, e.g. Copenhagen"
+  command = "curl wttr.in/<city=copenhagen>"
+  output = ""
+
+[[snippets]]
+  description = "Convert SVG to PDF"
+  command = "inkscape <svgfile> --export-area-drawing --batch-process --export-type=pdf --export-filename=<pdffile>"
+  tag = ["image"]
+  output = ""
+
+[[snippets]]
+  description = "Lowercase / downcase all characters"
+  command = "awk '{print tolower($0)}' <input>"
+  tag = ["text"]
+  output = ""
+
+[[snippets]]
+  description = "Remove JPG files without corresponding RW2 files"
+  command = "for f in *.JPG; set -l raw (string replace \".JPG\" \".RW2\" \"$f\"); if [ ! -f \"$raw\" ]; rm \"$f\"; end; end"
+  tag = ["fish", "image"]
+  output = ""
+
+[[snippets]]
+  description = "Resize image to given maximum dimensions (here: 1080p)"
+  command = "convert -resize 1920x1080 -quality 85 <infile> <outfile>"
+  tag = ["image", "imagemagick"]
+  output = ""
+
+[[snippets]]
+  description = "Crop triple-monitor wallpaper image into separate divisions"
+  command = "convert -crop 3x1@ +repage <infile> <out>_%02d.jpg"
+  tag = ["image", "imagemagick"]
+  output = ""
+
+[[snippets]]
+  description = "Install a virtual environment inside Jupyter notebook"
+  command = "pip install ipykernel; python -m ipykernel install --user --name=<myvenv>"
+  tag = ["python"]
+  output = ""
+
+[[snippets]]
+  description = "Convert BPE segments from subword-nmt to sentencepiece"
+  command = "sed 's/@@ /@@@/g' | sed 's/ / ▁/g' | sed 's/@@@/ /g'"
+  tag = ["sed", "bpe"]
+  output = ""
+
+[[snippets]]
+  description = "Count frequency of unique lines and sort by frequency"
+  command = "sort <filename> | uniq -c | sort -nr | head"
+  output = ""
+
+[[snippets]]
+  description = "Filter git diff to only show lines that have changed between branches, without metadata or context"
+  command = "git diff master -U0 | grep '^[+-]' | grep -Ev '^(--- a/|\\+\\+\\+ b/)'"
+  output = ""
+
+[[snippets]]
+  description = "Copy files matching a certain find-pattern with progress bar"
+  command = "fd . <fd-options> --exec cp -v {} <target-dir> | tqdm --total=(fd . <fd-options> | wc -l)"
+  output = ""
+
+[[snippets]]
+  description = "Convert all single newlines to spaces, but preserve double newlines (sed version)"
+  command = "sed -e ':a;N;$!ba;s/\\(.\\)\\n/\\1 /g' -e 's/\\n/\\n\\n/' <file>"
+  tag = ["sed"]
+  output = ""
+
+[[snippets]]
+  description = "Convert all single newlines to spaces, but preserve double newlines (awk version)"
+  command = "awk ' /^$/ { print \"\\n\"; } /./ { printf(\"%s \", $1); } END { print \"\"; } ' <file>"
+  tag = ["awk"]
+  output = ""
+
+[[snippets]]
+  description = "Convert all single newlines to spaces, but preserve double newlines (perl version)"
+  command = "perl -0777 -i -pe 's/\\n(?=[^\\n])//g' <file>"
+  tag = ["perl"]
+  output = ""
+
+[[snippets]]
+  description = "Rotate pages in a PDF clockwise"
+  command = "pdftk <inputpdf> cat 1-endeast output <outputpdf>"
+  tag = ["pdf"]
+  output = ""
