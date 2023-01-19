@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if which xcape >/dev/null; then
-    xcape -e '#65=Escape'
+if [ -x /usr/local/bin/xcape ]; then
+    /usr/local/bin/xcape -e '#66=Escape'
 fi
