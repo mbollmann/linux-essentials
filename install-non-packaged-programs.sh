@@ -50,7 +50,9 @@ fi
 
 if which python >/dev/null; then
     python -m pip install --upgrade pip
-    python -m pip install virtualfish
+    python -m pip install --user virtualfish
+    python -m pip install --user docopt black rich
+    python -m pip install --user jupyterlab
 else
     echo "!!! python isn't installed; skipping installation of Python packages."
 fi
