@@ -2,5 +2,4 @@ emacs
 emacs-auctex
 fish
 git
-starship
 tmux

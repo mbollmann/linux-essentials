@@ -20,6 +20,23 @@ if ! [ -f ~/.joplin/Joplin.AppImage ]; then
     wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 fi
 
+if ! which starship >/dev/null; then
+    curl -sS https://starship.rs/install.sh | sh
+fi
+
+if ! which xcape >/dev/null; then
+    sudo dnf install git gcc make pkgconfig libX11-devel libXtst-devel libXi-devel
+    THISDIR=$(pwd)
+    cd /tmp
+    git clone https://github.com/alols/xcape.git
+    cd xcape
+    make
+    sed -i 's/^PREFIX=.*/PREFIX=\/usr\/local/' Makefile
+    sed -i 's/^MANDIR.*/MANDIR?=\/man\/man1/' Makefile
+    sudo make install
+    cd $THISDIR
+fi
+
 if which npm >/dev/null; then
     # Install global packages in user directory
     if ! [ -d ~/.npm-global ]; then
