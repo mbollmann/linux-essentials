@@ -59,6 +59,10 @@ if test -f /home/bollmann/.config/fish/functions/conda.fish
   source /home/bollmann/.config/fish/functions/conda.fish
 end
 
+if test -f /home/linuxbrew/.linuxbrew/bin/brew
+  eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
+
 if command -s starship >/dev/null
   starship init fish | source
 end
