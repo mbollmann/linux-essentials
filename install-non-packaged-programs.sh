@@ -56,3 +56,17 @@ if which python >/dev/null; then
 else
     echo "!!! python isn't installed; skipping installation of Python packages."
 fi
+
+if ! which xcape >/dev/null; then
+    echo ">>> Installing xcape [via github.com/alols/xcape]"
+    sudo dnf install git gcc make pkgconfig libX11-devel libXtst-devel libXi-devel
+    git clone https://github.com/alols/xcape.git
+    cd xcape
+    make
+    sudo make install
+    cd ..
+    rm -rf ./xcape
+    if which xcape >/dev/null; then
+        echo ">>> Successfully installed xcape"
+    fi
+fi
