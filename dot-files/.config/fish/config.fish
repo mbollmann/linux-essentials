@@ -48,6 +48,10 @@ if status --is-interactive
   set -x VISUAL "emacs"
   set -x ALTERNATE_EDITOR "emacs"
 
+  if command -q xcape; and test -z (pgrep xcape)
+    xcape -e "#66=Escape"
+  end
+
   # We define our own virtualenv prompt, this hopefully disables warnings from vf?
   set -g VIRTUAL_ENV_DISABLE_PROMPT 1
 
