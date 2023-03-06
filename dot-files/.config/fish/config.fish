@@ -70,3 +70,9 @@ end
 if command -s starship >/dev/null
   starship init fish | source
 end
+
+if command -v flatpak > /dev/null
+  # set XDG_DATA_DIRS to include Flatpak installations
+
+  set -x XDG_DATA_DIRS $XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/bollmann/.local/share/flatpak/exports/share
+end
