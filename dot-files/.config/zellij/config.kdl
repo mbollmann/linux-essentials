@@ -1,0 +1,156 @@
+// If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+keybinds {
+    locked {
+        bind "F12" { SwitchToMode "Normal"; }
+    }
+    resize {
+        bind "_" "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+    }
+    normal {
+        bind "F11" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+    }
+    shared_except "locked" {
+        bind "Alt _" "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
+    }
+    shared_except "session" {
+        unbind "Ctrl g"
+        unbind "Ctrl q"
+    }
+    session {
+        // bind "d" { Detach; }
+        unbind "Ctrl g"
+        bind "Ctrl l" { SwitchToMode "Locked"; }
+        bind "Ctrl q" { Quit; }
+    }
+}
+
+// Toggle between having pane frames around the panes
+// Options:
+//   - true (default)
+//   - false
+//
+pane_frames false
+
+// Define color themes for Zellij
+// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
+// Once these themes are defined, one of them should to be selected in the "theme" section of this file
+//
+themes {
+    solarized-light {
+        fg 101 123 131
+        bg 253 246 227
+        black 7 54 66
+        red 220 50 47
+        green 133 153 0
+        yellow 181 137 0
+        blue 38 139 210
+        magenta 211 54 130
+        cyan 42 161 152
+        white 238 232 213
+        orange 203 75 22
+    }
+
+    solarized-dark {
+        fg 253 246 227
+        bg 0 43 54
+        black 7 54 66
+        red 220 50 47
+        green 133 153 0
+        yellow 181 137 0
+        blue 38 139 210
+        magenta 211 54 130
+        cyan 42 161 152
+        white 238 232 213
+        orange 203 75 22
+    }
+
+    nord {
+        fg 216 222 233 // #D8DEE9
+        bg 46 52 64 // #2E3440
+        black 59 66 82 // #3B4252
+        red 191 97 106 // #BF616A
+        green 163 190 140 // #A3BE8C
+        yellow 235 203 139 // #EBCB8B
+        blue 129 161 193 // #81A1C1
+        magenta 180 142 173 // #B48EAD
+        cyan 136 192 208 // #88C0D0
+        white 229 233 240 // #E5E9F0
+        orange 208 135 112 // #D08770
+    }
+
+    tokyo-night-dark {
+        fg 169 177 214
+        bg 26 27 38
+        black 56 62 90
+        red 249 51 87
+        green 158 206 106
+        yellow 224 175 104
+        blue 122 162 247
+        magenta 187 154 247
+        cyan 42 195 222
+        white 192 202 245
+        orange 255 158 100
+    }
+
+    tokyo-night-light {
+        fg 52 59 88
+        bg 213 214 219
+        black 15 15 20
+        red 186 75 96
+        green 72 94 48
+        yellow 143 94 21
+        blue 52 84 138
+        magenta 90 74 120
+        cyan 15 75 110
+        white 130 137 172
+        orange 150 80 39
+    }
+}
+
+// Choose the theme that is specified in the themes section.
+// Default: default
+//
+theme "nord"
+
+// The name of the default layout to load on startup
+// Default: "default"
+//
+// default_layout "compact"
+
+// Configure the scroll back buffer size
+// This is the number of lines zellij stores for each pane in the scroll back
+// buffer. Excess number of lines are discarded in a FIFO fashion.
+// Valid values: positive integers
+// Default value: 10000
+//
+// scroll_buffer_size 10000
+
+// Provide a command to execute when copying text. The text will be piped to
+// the stdin of the program to perform the copy. This can be used with
+// terminal emulators which do not support the OSC 52 ANSI control sequence
+// that will be used by default if this option is not set.
+// Examples:
+//
+copy_command "xclip -selection clipboard" // x11
+// copy_command "wl-copy"                    // wayland
+// copy_command "pbcopy"                     // osx
+
+// Enable or disable automatic copy (and clear) of selection when releasing mouse
+// Default: true
+//
+// copy_on_select false
+
+// Path to the default editor to use to edit pane scrollbuffer
+// Default: $EDITOR or $VISUAL
+//
+// scrollback_editor "/usr/bin/vim"
+
+// The folder in which Zellij will look for layouts
+//
+layout_dir "/home/bollmann/.config/zellij/layout"
+
+// The folder in which Zellij will look for themes
+//
+// theme_dir "/path/to/my/theme_dir"
