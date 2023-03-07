@@ -1,3 +1,8 @@
+if not functions -q fisher
+  echo "!!! fisher is not installed; attempting to fetch it"
+  curl -sL https://git.io/fisher | source && fisher update
+end
+
 if test -d ~/.virtualenv
   set -g VIRTUALFISH_HOME ~/.virtualenv
 end
