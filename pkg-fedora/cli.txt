@@ -4,6 +4,7 @@ bench
 exa
 fd-find
 fzf
+grc
 htop
 httpie
 ImageMagick
@@ -11,6 +12,7 @@ keychain
 ncdu
 pdf2svg
 pdf-stapler
+poppler-utils
 ripgrep
 thefuck
 tldr
