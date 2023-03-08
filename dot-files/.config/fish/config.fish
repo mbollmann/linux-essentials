@@ -73,6 +73,11 @@ if status --is-interactive
 
     set -x fzf_directory_opts --bind "ctrl-e:execute($EDITOR {} &> /dev/tty)+abort,ctrl-o:execute(open {} &> /dev/null)+abort"
     set -x fzf_history_opts --with-nth=4.. --preview=''
+
+    if functions -q _fzf_mmb_change_directory
+      bind --user \ec _fzf_mmb_change_directory
+      bind --user \eC '_fzf_mmb_change_directory --hidden'
+    end
   end
 end
 
