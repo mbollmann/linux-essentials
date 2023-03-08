@@ -8,26 +8,18 @@ This configuration has most recently been tested on: **Fedora 37**
 
 ## Dot-files
 
-The following files **contain personalized settings** and should probably
-**not** be copied verbatim if you take inspiration from this repo:
-
-+ `.gitconfig`
-+ `.ssh/config`
+Some of the files, like `.gitconfig` and `.ssh/config`, contain personalized
+settings that shouldn't be copied verbatim if you take inspiration from this
+repo.
 
 ### Shell settings
 
-`.bashrc` and its companions mainly do the following:
+I use [**fish**](https://fishshell.com/) together with
+[**starship**](https://starship.rs/).  My configuration mainly sets up custom
+paths, keybindings, and configures some external tools.
 
-+ set up history browsing/completion with arrow-up/-down
-+ define a colorful prompt
-+ include git branches in the prompt (http://code-worrier.com/blog/git-branch-in-bash-prompt/)
-+ define an enhanced `cd` that keeps track of visited directories (access with `d`(isplay), `p`(op), or `s`(wap))
-+ define some aliases that I commonly use
-
-Nowadays I mainly use [**fish**](https://fishshell.com/), for which a similar
-configuration is included.  Using this will produce a string of errors on first
-run, as necessary plugins aren't yet installed.  They should be fetched and
-installed automatically with the `fisher` command.
+There's also an elaborate `.bashrc` here, but since I switched to fish as my
+main shell, it hasn't really been kept updated for years.
 
 ### Emacs
 
@@ -40,15 +32,6 @@ heavily modified since.
 It currently uses [the Hack typeface](https://sourcefoundry.org/hack/), which
 needs to be installed manually, otherwise the configuration won't be fully
 loaded.
-
-### Miscellanea
-
-+ `.Xmodmap` binds the Caps-Lock key to the Escape keycode.
-+ There are some minor customizations for tools like `ack` and `thefuck`.
-
-**TODO:** I used to have a tmux configuration here, but it's currently
-broken. Need to investigate.
-
 
 ## Packages
 
