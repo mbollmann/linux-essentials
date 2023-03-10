@@ -1,8 +1,3 @@
-if not functions -q fisher
-  echo "!!! fisher is not installed; attempting to fetch it"
-  curl -sL https://git.io/fisher | source && fisher update
-end
-
 if test -d ~/.virtualenv
   set -g VIRTUALFISH_HOME ~/.virtualenv
 end
@@ -100,4 +95,8 @@ if command -v flatpak > /dev/null
   # set XDG_DATA_DIRS to include Flatpak installations
 
   set -x XDG_DATA_DIRS $XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/bollmann/.local/share/flatpak/exports/share
+end
+
+if not functions -q fisher
+  echo "!!! fisher is not installed; run 'install_fisher' to fetch it"
 end
