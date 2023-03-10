@@ -8,15 +8,7 @@
 
 [Gist]
   file_name = "pet-snippet.toml"
-  access_token = "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"
+  access_token = "<Generate token via https://github.com/settings/tokens and add it here>"
   gist_id = "5971af48744aaaf56da8fce7954172bb"
   public = false
   auto_sync = true
-
-[GitLab]
-  file_name = "pet-snippet.toml"
-  access_token = ""
-  url = ""
-  id = ""
-  visibility = "private"
-  auto_sync = false
