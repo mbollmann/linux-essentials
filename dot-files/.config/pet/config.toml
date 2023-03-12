@@ -2,7 +2,7 @@
   snippetfile = "/home/bollmann/.config/pet/snippet.toml"
   editor = "emacs -nw"
   column = 40
-  selectcmd = "fzf --preview='_pet_preview_string {}'"
+  selectcmd = "fzf"
   backend = "gist"
   sortby = ""
 
