@@ -1,4 +1,4 @@
-function _fzf_mmb_change_directory --description "Search for subdirectory to cd into."
+function __mmb_change_directory --description "Search for subdirectory to cd into."
     set -l options  "h/hidden"
     argparse $options -- $argv
 

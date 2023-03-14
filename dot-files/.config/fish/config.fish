@@ -55,14 +55,24 @@ if status is-interactive
             set -x fzf_preview_file_cmd preview
         end
 
-        set -x fzf_directory_opts --bind "ctrl-e:execute($EDITOR {} &> /dev/tty)+abort,ctrl-o:execute(open {} &> /dev/null)+abort"
+        if functions -q et
+            set -x fzf_directory_opts --bind "ctrl-e:execute(et {} &> /dev/tty)+abort,ctrl-o:execute(open {} &> /dev/null)+abort"
+        else
+            set -x fzf_directory_opts --bind "ctrl-e:execute($EDITOR {} &> /dev/tty)+abort,ctrl-o:execute(open {} &> /dev/null)+abort"
+        end
         set -x fzf_history_opts --with-nth=4.. --preview=''
 
-        if functions -q _fzf_mmb_change_directory
-            bind --user \ec _fzf_mmb_change_directory
-            bind --user \eC '_fzf_mmb_change_directory --hidden'
+        if functions -q __mmb_change_directory
+            bind --user \ec __mmb_change_directory
+            bind --user \eC '__mmb_change_directory --hidden'
         end
     end
+
+    if functions -q __mmb_list_current_token
+        bind --user \el __mmb_list_current_token
+    end
+
+    bind --user \e\' __fish_toggle_comment_commandline
 end
 
 set -x R_LIBS_USER "$HOME/.R/library"
