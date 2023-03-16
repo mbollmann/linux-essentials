@@ -14,6 +14,8 @@ function __mmb_change_directory --description "Search for subdirectory to cd int
 
     # $fzf_dir_opts is the deprecated version of $fzf_directory_opts
     set fzf_arguments --no-multi --ansi $fzf_dir_opts $fzf_directory_opts
+    # ... these ones override what's in fzf_directory_opts
+    set --append fzf_arguments --bind "ctrl-o:execute(open {} &> /dev/null)+abort" --header "Ctrl-O to open in desktop application"
     set token (commandline --current-token)
     # expand any variables or leading tilde (~) in the token
     set expanded_token (eval echo -- $token)

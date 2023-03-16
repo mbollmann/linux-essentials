@@ -56,11 +56,12 @@ if status is-interactive
         end
 
         if functions -q et
-            set -x fzf_directory_opts --bind "ctrl-e:execute(et {} &> /dev/tty)+abort,ctrl-o:execute(open {} &> /dev/null)+abort"
+            set -x fzf_directory_opts --bind "ctrl-e:execute(et {})+abort,ctrl-o:execute(open {} &> /dev/null)+abort" --header "Ctrl-E to open in Emacs, Ctrl-O to open in desktop application"
         else
-            set -x fzf_directory_opts --bind "ctrl-e:execute($EDITOR {} &> /dev/tty)+abort,ctrl-o:execute(open {} &> /dev/null)+abort"
+            set -x fzf_directory_opts --bind "ctrl-e:execute($EDITOR {})+abort,ctrl-o:execute(open {} &> /dev/null)+abort" --header "Ctrl-E to open in $EDITOR, Ctrl-O to open in desktop application"
         end
         set -x fzf_history_opts --with-nth=4.. --preview=''
+        set -x fzf_processes_opts --bind "ctrl-r:reload(ps -A -opid,command),ctrl-k:execute-silent(kill (string split --no-empty --field=1 -- ' ' {}))+reload-sync(sleep .4; ps -A -opid,command)" --header "Ctrl-R to reload, Ctrl-K to send SIGTERM directly"
 
         if functions -q __mmb_change_directory
             bind --user \ec __mmb_change_directory
