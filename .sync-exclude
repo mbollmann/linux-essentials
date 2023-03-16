@@ -1,0 +1,3 @@
+# Exclude these files from sync because they contain secrets
+.gitconfig
+.config/pet/config.toml
