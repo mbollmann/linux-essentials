@@ -14,8 +14,8 @@ pdf2svg
 pdf-stapler
 poppler-utils
 ripgrep
+tealdeer
 thefuck
-tldr
 visidata
 wget
 wmctrl

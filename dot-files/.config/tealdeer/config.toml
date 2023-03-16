@@ -1,0 +1,19 @@
+# Goal: Have a style that's identical to how fish colors commands
+
+[style.example_text]
+foreground = "yellow"
+italic = true
+
+[style.example_code]
+foreground = "cyan"
+
+[style.command_name]
+foreground = "blue"
+
+[style.example_variable]
+foreground = "cyan"
+underline = true
+
+[updates]
+auto_update = true
+auto_update_interval_hours = 168
