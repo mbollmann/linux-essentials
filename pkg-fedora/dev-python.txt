@@ -1,7 +1,9 @@
+black
+docopt
 python3
 python3-pip
 python3-devel
-python3-black
+python3-docopt
 python3-ipykernel
 python3-ipywidgets
 python3-jupyter-client
@@ -11,6 +13,8 @@ python3-pygraphviz
 python3-pytest
 python3-pytest-cov
 python3-pytest-virtualenv
+python3-rich
+python3-textual
 python3-virtualenv
 python3-widgetsnbextension
 xonsh
