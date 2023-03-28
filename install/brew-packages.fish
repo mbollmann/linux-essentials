@@ -5,7 +5,7 @@
 ## Homebrew first if necessary.                                               ##
 ##                                                                            ##
 ## List of packages that will be installed:                                   ##
-set -l MY_HOMEBREW_PACKAGES autorestic grex timg yq
+set -l MY_HOMEBREW_PACKAGES autorestic gocryptfs grex timg yq
 ################################################################################
 
 source (dirname (status --current-filename))/_echo.fish

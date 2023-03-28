@@ -5,7 +5,7 @@
 ## (Regular packages should be installed via dnf or in virtual environments.) ##
 ##                                                                            ##
 ## List of packages that will be installed:                                   ##
-set -l MY_PYTHON_PACKAGES jupyterlab virtualfish
+set -l MY_PYTHON_PACKAGES colorpedia jupyterlab pipx plotext virtualfish
 ################################################################################
 
 argparse 'u/upgrade' -- $argv
