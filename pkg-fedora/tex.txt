@@ -1,3 +1,4 @@
+latexmk
 texlive
 texlive-apa
 texlive-apacite
@@ -9,6 +10,7 @@ texlive-collection-humanities
 texlive-collection-genericrecommended
 texlive-collection-langcjk
 texlive-collection-langcyrillic
+texlive-collection-langeuropean
 texlive-collection-langgerman
 texlive-collection-latex
 texlive-collection-latexextra
