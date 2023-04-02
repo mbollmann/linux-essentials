@@ -3,6 +3,7 @@
 
 ;; color theme
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(setq x-underline-at-descent-line t)
 (load-theme 'solarized-dark t)
 (defvar *mmb-current-theme* 'solarized-dark)
 (defun solarized-load-theme (theme)
@@ -14,6 +15,9 @@
   (cond ((eq *mmb-current-theme* 'solarized-dark)  (solarized-load-theme 'solarized-light))
         ((eq *mmb-current-theme* 'solarized-light) (solarized-load-theme 'solarized-dark)))
   )
+
+;; Globally highlight line of the cursor
+(global-hl-line-mode)
 
 ;; Turn off annoying redefinition warning
 (setq ad-redefinition-action 'accept)
