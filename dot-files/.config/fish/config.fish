@@ -84,6 +84,7 @@ end
 
 if test -f /home/linuxbrew/.linuxbrew/bin/brew
     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    set --append --path -x fish_complete_path /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
 end
 
 # Starship prompt

@@ -9,6 +9,7 @@ htop
 httpie
 ImageMagick
 keychain
+moreutils
 ncdu
 pdf2svg
 pdf-stapler
