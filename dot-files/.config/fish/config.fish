@@ -33,9 +33,6 @@ if status is-interactive
     end
 
     if command -q bat
-        # Theme for 'bat' command
-        set -x BAT_THEME "OneHalfDark"
-
         # Man pager uses 'bat' command
         set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
         set -x MANROFFOPT "-c"
