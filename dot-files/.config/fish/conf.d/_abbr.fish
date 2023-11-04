@@ -1,7 +1,9 @@
 abbr -a gcl git clone
 abbr -a gcg --set-cursor "git clone github:%"
 abbr -a gco git checkout
+abbr -a gfap git fetch --all --prune
 abbr -a gp git pull
+abbr -a gpl git pull
 abbr -a gpr git pull --rebase
 abbr -a gu git push
 abbr -a gs git status
