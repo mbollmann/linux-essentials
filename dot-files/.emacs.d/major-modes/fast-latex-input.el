@@ -44,14 +44,14 @@
                    (funcall (preview-scale-from-face)))))))
 
 ;; CDLatex settings
-(use-package cdlatex
-  :ensure t
-  :hook (LaTeX-mode . turn-on-cdlatex)
-  :bind (:map cdlatex-mode-map
-              ("<tab>" . cdlatex-tab))
-  :init
-  (setq cdlatex-math-modify-prefix (kbd "’"))
-)
+;; (use-package cdlatex
+;;   :ensure t
+;;   :hook (LaTeX-mode . turn-on-cdlatex)
+;;   :bind (:map cdlatex-mode-map
+;;               ("<tab>" . cdlatex-tab))
+;;   :init
+;;   (setq cdlatex-math-modify-prefix (kbd "’"))
+;; )
 
 ;; Yasnippet settings
 (use-package yasnippet

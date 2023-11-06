@@ -55,7 +55,7 @@
     scss-mode
     yaml-mode
 
-    cdlatex
+    ;cdlatex
     yasnippet
 
     all-the-icons
