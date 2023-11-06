@@ -14,3 +14,4 @@
 --ignore-directory=is:build
 --ignore-directory=is:.git
 --ignore-directory=is:venv
+--ignore-directory=is:.cache
