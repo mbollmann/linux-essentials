@@ -7,7 +7,7 @@ abbr -a gpl git pull
 abbr -a gpr git pull --rebase
 abbr -a gu git push
 abbr -a gs git status
-abbr -a ls exa
+abbr -a ls eza
 abbr -a cat "bat -p"
 abbr -a open --set-cursor "open % 2>/dev/null"
 abbr -a sus --set-cursor "sort % | uniq -c | sort -nr"

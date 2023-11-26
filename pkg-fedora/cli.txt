@@ -1,7 +1,7 @@
 ack
 bat
 bench
-exa
+eza
 fd-find
 fzf
 grc
