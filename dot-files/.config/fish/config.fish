@@ -44,8 +44,8 @@ if status is-interactive
     if functions -q fzf_configure_bindings
         fzf_configure_bindings --directory=\cf --git_status=\e\cg
 
-        if command -q exa
-            set -x fzf_preview_dir_cmd "exa --all --icons --classify --color=always"
+        if command -q eza
+            set -x fzf_preview_dir_cmd "eza --all --icons --classify --color=always"
         end
 
         if functions -q preview
