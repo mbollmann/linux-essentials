@@ -5,7 +5,7 @@
 ## Homebrew first if necessary.                                               ##
 ##                                                                            ##
 ## List of packages that will be installed:                                   ##
-set -l MY_HOMEBREW_PACKAGES autorestic gocryptfs grex timg yq
+set -l MY_HOMEBREW_PACKAGES autorestic curlie gocryptfs grex gum timg typst yazi yt-dlp yq
 ################################################################################
 
 source (dirname (status --current-filename))/_echo.fish
@@ -27,6 +27,9 @@ if not command -q brew
     end
 end
 
+# brew often fails with "Too many open files"
+ulimit -Sn 32768
+
 for pkg in $MY_HOMEBREW_PACKAGES
     if brew list $pkg &>/dev/null
         echo_status $pkg already installed.
@@ -35,3 +38,6 @@ for pkg in $MY_HOMEBREW_PACKAGES
         brew install $pkg
     end
 end
+
+# This messes with FUSE mounts if it gets installed
+brew unlink libfuse

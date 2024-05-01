@@ -1,6 +1,7 @@
 ack
 bat
 bench
+duf
 eza
 fd-find
 fzf
