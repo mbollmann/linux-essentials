@@ -3,6 +3,7 @@
 
 ;; color theme
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(straight-use-package 'solarized-theme)
 (setq x-underline-at-descent-line t)
 (load-theme 'solarized-dark t)
 (defvar *mmb-current-theme* 'solarized-dark)
@@ -99,6 +100,7 @@
 (setq require-final-newline 'ask)
 
 ;; Interactively Do Things - UX improvement for the minibuffer
+(straight-use-package 'ido-completing-read+)
 (ido-mode 1)
 (setq ido-everywhere t
       ido-enable-flex-matching t

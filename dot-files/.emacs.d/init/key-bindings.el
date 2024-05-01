@@ -7,7 +7,7 @@
 (global-set-key (kbd "C-S-<iso-lefttab>") 'previous-multiframe-window)
 
 ;; browse-kill-ring
-(require 'browse-kill-ring)
+(straight-use-package 'browse-kill-ring)
 (global-set-key (kbd "C-c y") 'browse-kill-ring)
 
 ;; scroll-all-mode
@@ -24,12 +24,12 @@
 (global-set-key (kbd "C-ä C-w") 'delete-trailing-whitespace)
 
 ;; move-text
-(require 'move-text)
+(straight-use-package 'move-text)
 (global-set-key (kbd "M-<up>") 'move-text-up)
 (global-set-key (kbd "M-<down>") 'move-text-down)
 
 ;; expand-region
-(require 'expand-region)
+(straight-use-package 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; keybindings for window resizing (defined in interface.el)
@@ -56,7 +56,7 @@
 (global-set-key (kbd "M-<dead-circumflex>") 'idomenu)
 
 ;; highlighting symbols
-(require 'highlight-symbol)
+(straight-use-package 'highlight-symbol)
 (global-set-key (kbd "C-<f3>") 'highlight-symbol-at-point)
 (global-set-key (kbd "<f3>") 'highlight-symbol-next)
 (global-set-key (kbd "S-<f3>") 'highlight-symbol-prev)
@@ -100,14 +100,14 @@
 (global-set-key (kbd "C-x C-u") 'list-buffers)
 
 ;;;; neotree
-(require 'neotree)
+(straight-use-package 'neotree)
 (setq neo-smart-open t)
 (global-set-key (kbd "<f5>") 'neotree-toggle)
 
 ;;;; Google stuff
-(require 'google-this)
+(straight-use-package 'google-this)
 (global-set-key (kbd "C-c g") 'google-this-mode-submap)
-(require 'google-translate)
+(straight-use-package 'google-translate)
 (require 'google-translate-default-ui)
 (global-set-key (kbd "C-c t") 'google-translate-at-point)
 (global-set-key (kbd "C-c T") 'google-translate-query-translate)

@@ -4,6 +4,8 @@
 (require 'bind-key)
 
 ;; org-mode
+(straight-use-package 'org)
+(straight-use-package 'org-autolist)
 ;(setq org-log-done t)
 ;(setq org-agenda-files (list "~/Dropbox/org-files/agenda-work.org"
 ;                             "~/Dropbox/org-files/agenda-home.org"))
@@ -17,6 +19,8 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; python-mode (Emacs 23 ships with python.el, but this is better)
+(straight-use-package 'python-mode)
+(straight-use-package 'python-docstring)
 (autoload 'python-mode "python-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
@@ -24,15 +28,14 @@
 (add-to-list 'auto-mode-alist '("\\.xsh$" . python-mode))
 
 ;; markdown-mode
+(straight-use-package 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.txt$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.page$" . markdown-mode))
 
 ;; R-markdown-mode
-(use-package poly-markdown
-  :ensure t
-  )
+(use-package poly-markdown)
 
 ;; yaml-mode
 (use-package yaml-mode
@@ -45,6 +48,8 @@
 (use-package cmake-mode
   :mode "CMakeLists\\.txt\\'|\\.toolchain\\'"
   )
+
+(use-package fish-mode)
 
 ;; web-mode (HTML, PHP, JS) and js2-mode for pure .js files
 (use-package web-mode
@@ -76,9 +81,10 @@
   )
 
 ;; LaTeX/AucTeX
-(require 'fast-latex-input)
+;(require 'fast-latex-input)
 
 ;; Apache mode
+(straight-use-package 'apache-mode)
 (autoload 'apache-mode "apache-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))
 (add-to-list 'auto-mode-alist '("httpd\\.conf\\'"  . apache-mode))
@@ -87,6 +93,14 @@
 (add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode))
 
 ;; justfiles
-(add-to-list 'auto-mode-alist '("justfile\\'"  . makefile-mode))
+(straight-use-package 'just-mode)
+(add-to-list 'auto-mode-alist '("justfile\\'"  . just-mode))
+
+(use-package typst-ts-mode
+  :straight (:type git :host sourcehut :repo "meow_king/typst-ts-mode")
+  :custom
+  ;; don't add "--open" if you'd like `watch` to be an error detector
+  (typst-ts-mode-watch-options "--open")
+  )
 
 (provide 'major-modes)

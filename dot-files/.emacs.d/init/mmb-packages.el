@@ -1,93 +1,47 @@
 (require 'cl-lib)
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-;(package-initialize)
 
-(setq url-http-attempt-keepalives nil)
+;;; Bootstrap straight.el
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+;;; End bootstrap straight.el
 
-(defvar mmb-packages
-  '(async
-    auto-complete
-    benchmark-init
-    browse-kill-ring
-    dash
-    epl
-    esup
-    fuzzy
-    highlight-symbol
-    ido-completing-read+
-    let-alist
-    move-text
-    pkg-info
-    popup
-    powerline
-    s
-    seq
-    smart-mode-line
-    smart-mode-line-powerline-theme
-    solarized-theme
-    spaceline
-    tabbar
-    use-package
-    with-editor
+;;; Make (use-package ...) commands use straight without explicitly told to
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
 
-    aas
-    anzu
-    ess
-    apache-mode
-    cmake-mode
-    fish-mode
-    god-mode
-    haml-mode
-    js2-mode
-    markdown-mode
-    multi-web-mode
-    php-mode
-    poly-markdown
-    python-mode
-    python-docstring
-    rust-mode
-    sass-mode
-    scss-mode
-    yaml-mode
+;;; Packages that are not loaded/configured in other files
+(straight-use-package 'async)
+(straight-use-package 'benchmark-init)
+(straight-use-package 'dash)
+(straight-use-package 'epl)
+(straight-use-package 'let-alist)
+(straight-use-package 'pkg-info)
+(straight-use-package 'popup)
+(straight-use-package 's)
+(straight-use-package 'seq)
+(straight-use-package 'tabbar)
+(straight-use-package 'with-editor)
 
-    ;cdlatex
-    yasnippet
+(straight-use-package 'aas)
+(straight-use-package 'anzu)
+(straight-use-package 'ess)
+(straight-use-package 'yasnippet)
 
-    all-the-icons
-    discover-my-major
-    eyebrowse
-    expand-region
-    google-maps
-    google-this
-    google-translate
-    magit
-    magit-gitflow
-    magit-popup
-    magit-todos
-    git-commit
-    neotree
-    org
-    org-autolist
-    ox-gfm
-    w3m)
-  "A list of packages to ensure are installed at launch.")
-
-(defun mmb-packages-installed-p ()
-  (cl-loop for p in mmb-packages
-           when (not (package-installed-p p)) do (cl-return nil)
-           finally (cl-return t)))
-
-(unless (mmb-packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  (dolist (p mmb-packages)
-    (when (not (package-installed-p p))
-      (package-install p))))
+(straight-use-package 'discover-my-major)
+(straight-use-package 'git-commit)
+(straight-use-package 'ox-gfm)
 
 (provide 'mmb-packages)

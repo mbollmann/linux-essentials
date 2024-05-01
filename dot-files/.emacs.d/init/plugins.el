@@ -3,31 +3,19 @@
   (require 'use-package))
 (require 'bind-key)
 
-;;;; clean and powerful modeline
-;(require 'smart-mode-line)
-;(setq sml/theme 'respectful)
-;(setq sml/no-confirm-load-theme t)
-;(sml/setup)
-;(add-to-list 'sml/replacer-regexp-list '("^~/repositories/" ":repo:") t)
-;(add-to-list 'sml/replacer-regexp-list '("^~/web/" ":web:") t)
-;(set-face-attribute 'mode-line nil :foreground "#f0dfaf" :background "#1e2320" :box nil)
-;(set-face-attribute 'mode-line-inactive nil :foreground "#88b090" :background "#2e3330" :box nil)
-
-;;;; compact / hidden minor mode names in the modeline
-;(when (require 'diminish nil 'noerror)
-;  (eval-after-load "auto-complete"         '(diminish 'auto-complete-mode         " AC"))
-;  )
-
+;;;; spaceline
+(straight-use-package 'spaceline)
 (require 'spaceline-config)
 (spaceline-emacs-theme)
 (setq spaceline-workspace-numbers-unicode t)
 
 ;;;; grant fuzzy-searching superpowers to isearch
-(require 'fuzzy)
-(turn-on-fuzzy-isearch)
+; TODO: why is this not working?
+; (straight-use-package 'fuzzy)
+; (turn-on-fuzzy-isearch)
 
 ;;;; use anzu-mode everywhere
-(require 'anzu)
+(straight-use-package 'anzu)
 (global-anzu-mode +1)
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
@@ -40,6 +28,7 @@
 (ido-ubiquitous-mode t)
 
 ;;;; auto-complete
+(straight-use-package 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (setq ac-auto-show-menu t
@@ -53,7 +42,7 @@
 
 ;;;; eyebrowse
 (setq eyebrowse-keymap-prefix (kbd "C-ä C-e"))
-(require 'eyebrowse)
+(straight-use-package 'eyebrowse)
 (eyebrowse-mode t)
 
 ;; tramp default mode
@@ -67,7 +56,7 @@
 ;(define-key flycheck-mode-map flycheck-keymap-prefix flycheck-command-map)
 
 ;;;; godmode
-(require 'god-mode)
+(straight-use-package 'god-mode)
 
 ;; change cursor type when we're in godmode
 (defun my-update-cursor ()
@@ -132,6 +121,7 @@
 (use-package font-lock+)
 (use-package all-the-icons)
 
+(straight-use-package 'esup)
 (setq esup-depth 0)
 
 (provide 'plugins)
