@@ -15,6 +15,9 @@ if fish_is_root_user
     exit 1
 end
 
+# brew often fails with "Too many open files"
+ulimit -Sn 32768
+
 if not command -q brew
     echo_status "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -25,10 +28,9 @@ if not command -q brew
         echo_error "Installation of Homebrew failed and/or environment variables not set."
         exit 1
     end
+else
+    brew upgrade
 end
-
-# brew often fails with "Too many open files"
-ulimit -Sn 32768
 
 for pkg in $MY_HOMEBREW_PACKAGES
     if brew list $pkg &>/dev/null
