@@ -256,6 +256,9 @@ alias cbwd="pwd | cb"
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 ################################################################################
 
+# Make (newer versions of) less print all Unicode characters
+export LESSUTFCHARDEF=E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p
+
 # added by Pew
 if [ -x /usr/local/bin/pew ]; then
     source $(pew shell_config)
@@ -268,3 +271,7 @@ if [ -f ~/.config/pythonstartup.py ]; then
 fi
 
 [[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

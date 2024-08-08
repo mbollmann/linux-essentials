@@ -6,6 +6,9 @@ if test -d ~/.virtualenvs
     set -g VIRTUALFISH_HOME ~/.virtualenvs
 end
 
+# Make (newer versions of) less print all Unicode characters
+set -x LESSUTFCHARDEF "E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p"
+
 if status is-interactive
     if command -q keychain
         keychain --quiet --clear --ignore-missing $HOME/.ssh/id_rsa $HOME/.ssh/id_dsa $HOME/.ssh/id_ed25519
@@ -71,6 +74,9 @@ if status is-interactive
     end
 
     bind --user \e\' __fish_toggle_comment_commandline
+
+    # Use yazi instead of Dired
+    bind --user -k f5 yazi
 end
 
 set -x R_LIBS_USER "$HOME/.R/library"
@@ -80,7 +86,7 @@ if test -f /home/bollmann/.config/fish/functions/conda.fish
 end
 
 if test -f /home/linuxbrew/.linuxbrew/bin/brew
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
     set --append --path -x fish_complete_path /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
 end
 
