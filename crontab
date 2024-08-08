@@ -1,0 +1,6 @@
+PATH="/home/bollmann/repos/scripts:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin"
+
+0 */1 * * * autorestic -c /home/bollmann/.autorestic.yml --ci cron > /home/bollmann/.autorestic.log 2>&1
+30 */1 * * * autorestic -c /mnt/data/.autorestic.yml --ci cron > /mnt/data/.autorestic.log 2>&1
+5 */1 * * * purge_old_files.fish
+15 */19 * * * check_sync_status.fish
