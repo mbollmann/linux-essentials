@@ -106,6 +106,9 @@
   (transient-append-suffix 'magit-status-jump '(0 0 -1)
     '("T " "Todos" magit-todos-jump-to-todos))
   )
+(setq auth-sources '("~/.authinfo"))
+(use-package forge
+  :after magit)
 
 ;; dired+
 (use-package dired+ :defer t)
