@@ -3,7 +3,7 @@
 Dot-files, essential packages, and more to set up a Linux installation, kept
 here to facilitate setting up a new system or virtual machine.
 
-This configuration has most recently been tested on: **Fedora 39**
+This configuration has most recently been tested on: **Fedora 40**
 
 
 ## Dot-files
@@ -45,3 +45,13 @@ from a given file; e.g., to install all the nifty command-line utilities:
 ```bash
 sudo ./install-pkg-fedora.sh pkg-fedora/cli.txt
 ```
+
+### DisplayLink driver
+
+For laptops with docking stations, the DisplayLink driver might be required to
+make a multi-monitor setup work.  This is currently not included in Fedora
+package repos, but can be obtained here:
+
+https://github.com/displaylink-rpm/displaylink-rpm/releases
+
+It needs to be updated manually after distribution upgrades.
