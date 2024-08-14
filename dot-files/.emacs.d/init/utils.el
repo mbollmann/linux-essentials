@@ -1,10 +1,5 @@
 ;; Various custom functions
 
-(defun full-screen-toggle ()
-  "toggle full-screen mode"
-  (interactive)
-  (shell-command "wmctrl -r :ACTIVE: -btoggle,fullscreen"))
-
 ;; comment-or-uncomment-region-or-line
 (defun comment-or-uncomment-region-or-line ()
   "Like comment-or-uncomment-region, but if there's no mark \(that means no

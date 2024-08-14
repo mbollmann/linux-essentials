@@ -42,8 +42,8 @@
 (global-set-key [home] 'smart-beginning-of-line)
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
 
-;;;; F11 for fullscreen
-(global-set-key (kbd "<f11>") 'full-screen-toggle)
+;;;; F11 for fullscreen (Emacs default, but make it work in God mode too)
+(global-set-key (kbd "C-<f11>") 'toggle-frame-fullscreen)
 
 ;;;; F12 to toggle theme
 (global-set-key (kbd "<f12>") 'solarized-toggle-theme)
