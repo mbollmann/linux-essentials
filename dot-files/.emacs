@@ -33,6 +33,7 @@
  )
 
 (when init-file-debug
+  (add-to-list 'load-path "~/.emacs.d/plugins")
   (require 'benchmark-init)
   (benchmark-init/activate)
   (add-hook 'emacs-startup-hook 'benchmark-init/show-durations-tree)

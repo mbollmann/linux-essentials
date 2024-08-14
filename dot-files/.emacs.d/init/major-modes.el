@@ -97,10 +97,14 @@
 (add-to-list 'auto-mode-alist '("justfile\\'"  . just-mode))
 
 (use-package typst-ts-mode
-  :straight (:type git :host sourcehut :repo "meow_king/typst-ts-mode")
+  :straight '(:type git :host codeberg :repo "meow_king/typst-ts-mode"
+                    :files (:defaults "*.el"))
   :custom
   ;; don't add "--open" if you'd like `watch` to be an error detector
   (typst-ts-mode-watch-options "--open")
-  )
+  :config
+  (add-to-list 'treesit-language-source-alist
+               '(typst "https://github.com/uben0/tree-sitter-typst"))
+)
 
 (provide 'major-modes)
