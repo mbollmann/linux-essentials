@@ -32,7 +32,7 @@ if status is-interactive
 
     # Make Caps Lock behave like Escape if pressed shortly
     if command -q xcape; and test -z (pgrep xcape)
-        xcape -e "#66=Escape"
+        xcape -e "#66=Escape" -t 150
     end
 
     if command -q bat
