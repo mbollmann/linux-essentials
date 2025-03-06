@@ -1,13 +1,42 @@
+########################################################################
+# Core behaviour
+########################################################################
+
 [user]
-        email = marcel@bollmann.me
-        name = Marcel Bollmann
-        signingkey = ADDME
-[push]
-        default = matching
-[init]
-        defaultBranch = main
+	email = marcel@bollmann.me
+	name = Marcel Bollmann
+	signingkey = ADDME
+[github]
+	user = mbollmann
 [commit]
-        gpgsign = true
+	gpgsign = true
+[push]
+	default = simple
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        all = true
+        prune = true
+        pruneTags = true
+[init]
+	defaultBranch = main
+
+########################################################################
+# UI/UX things
+########################################################################
+
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[help]
+        autocorrect = prompt
+
+########################################################################
+# Diffing and merging
+########################################################################
 
 # git-delta <https://github.com/dandavison/delta>
 [core]
@@ -20,9 +49,20 @@
         line-numbers = true
         syntax-theme = OneHalfDark
 [merge]
-        conflictstyle = diff3
+        conflictstyle = zdiff3
 [diff]
-        colorMoved = default
+        colorMoved = dimmed-zebra
 
-[github]
-        user = mbollmann   # used by Forge
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
