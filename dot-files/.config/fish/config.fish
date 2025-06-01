@@ -30,6 +30,9 @@ if status is-interactive
     # We define our own virtualenv prompt, this hopefully disables warnings from vf?
     set -g VIRTUAL_ENV_DISABLE_PROMPT 1
 
+    # Make GPG use the terminal for pinentry
+    set -x GPG_TTY (tty)
+
     # Make Caps Lock behave like Escape if pressed shortly
     if command -q xcape; and test -z (pgrep xcape)
         xcape -e "#66=Escape" -t 150
