@@ -33,11 +33,6 @@ if status is-interactive
     # Make GPG use the terminal for pinentry
     set -x GPG_TTY (tty)
 
-    # Make Caps Lock behave like Escape if pressed shortly
-    if command -q xcape; and test -z (pgrep xcape)
-        xcape -e "#66=Escape" -t 150
-    end
-
     if command -q bat
         # Man pager uses 'bat' command
         set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -79,7 +74,7 @@ if status is-interactive
     bind --user \e\' __fish_toggle_comment_commandline
 
     # Use yazi instead of Dired
-    bind --user -k f5 yazi
+    bind --user f5 yazi
 end
 
 set -x R_LIBS_USER "$HOME/.R/library"
